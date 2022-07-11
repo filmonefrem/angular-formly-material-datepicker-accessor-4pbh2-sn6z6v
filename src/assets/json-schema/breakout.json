@@ -1,0 +1,214 @@
+{
+  "schema": {
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "title": "Breakout",
+  "description": "Breakout data transformed into JSON and input directly into Formly.",
+  "type": "object",
+  "properties": {
+    "subject": {
+      "title": "Subject",
+      "type": "object",
+      "properties": {
+        "txtFirstName": {
+          "title": "First Name",
+          "description": "Patient First Name",
+          "type": "string"
+        },
+        "txtLastName": {
+          "title": "Last Name",
+          "description": "Patient Last Name",
+          "type": "string"
+        },
+        "dtBirthDate": {
+          "title": "Date of Birth",
+          "description": "Patient Date of Birth",
+          "type": "string",
+          "format": "date",
+          "widget": {
+            "formlyConfig": {
+              "templateOptions": {
+                "type": "datepicker"
+              }
+            }
+          }
+        },
+        "txtCity": {
+          "title": "City",
+          "description": "Patient City",
+          "type": "string"
+        },
+        "txtState": {
+          "title": "State",
+          "description": "Patient State",
+          "type": "string"
+        },
+        "selGender": {
+          "title": "Gender",
+          "description": "Patient Gender",
+          "type": "string",
+          "enum": [
+            "Male",
+            "Female",
+            "Other"
+          ]
+        }
+      },
+      "required": [
+        "txtFirstName",
+        "txtLastName"
+      ]
+    },
+    "diagnosis-treatment": {
+      "title": "Diagnosis Treatment",
+      "type": "object",
+      "properties": {
+        "txtDiagnosis": {
+          "title": "Tell us a little more about your diagnosis",
+          "description": "Tell us a little more about your diagnosis",
+          "type": "string",
+          "maxLength": 250,
+          "rows": 4,
+          "cols": 50
+        },
+        "rdlTreatment": {
+          "title": "Have you received treatment and/or procedure",
+          "description": "Have you received treatment and/or procedure",
+          "type": "string",
+          "name": "rdlTreatment",
+          "enum": [
+            "1",
+            "0"
+          ]
+        },
+        "txtTreatmentLength": {
+          "title": "Please describe treatment length, time frame, etc",
+          "description": "Please describe treatment length, time frame, etc",
+          "type": "string",
+          "maxLength": 250,
+          "rows": 4,
+          "cols": 50
+        }
+      }
+    },
+    "symptoms": {
+      "title": "Symptoms",
+      "type": "object",
+      "properties": {
+        "rdlLocalizedPain": {
+          "title": "Localized pain",
+          "description": "Localized pain",
+          "type": "string",
+          "name": "rdlLocalizedPain",
+          "enum": [
+            "1",
+            "0"
+          ]
+        },
+        "rdlNeckPain": {
+          "title": "Pain that radiates to the neck",
+          "description": "Pain that radiates to the neck",
+          "type": "string",
+          "name": "rdlLocalizedPain",
+          "enum": [
+            "1",
+            "0"
+          ]
+        },
+        "rdlArmPain": {
+          "title": "Pain in either arm",
+          "description": "Pain in either arm",
+          "type": "string",
+          "name": "rdlArmPain",
+          "enum": [
+            "1",
+            "0"
+          ]
+        },
+        "rdlWalking": {
+          "title": "Walking or balance impairments",
+          "description": "Walking or balance impairments",
+          "type": "string",
+          "name": "rdlWalking",
+          "enum": [
+            "1",
+            "0"
+          ]
+        },
+        "rdlIncontinence": {
+          "title": "Incontinence of bowels or bladder",
+          "description": "Incontinence of bowels or bladder",
+          "type": "string",
+          "name": "rdlIncontinence",
+          "enum": [
+            "1",
+            "0"
+          ]
+        },
+        "txtSymptoms": {
+          "title": "Please describe your symptoms",
+          "description": "Please describe your symptoms",
+          "type": "string",
+          "maxLength": 250,
+          "rows": 4,
+          "cols": 50
+        },
+        "txtBegin": {
+          "title": "When did you symptoms begin?",
+          "description": "When did you symptoms begin?",
+          "type": "string",
+          "maxLength": 250,
+          "rows": 4,
+          "cols": 50
+        }
+      }
+    },
+    "medical-history": {
+      "title": "Medical History",
+      "type": "object",
+      "properties": {
+        "txtHistory": {
+          "title": "Please tell us a little more about your medical history (Diabetes, Hypertension, etc)",
+          "description": "Please tell us a little more about your medical history (Diabetes, Hypertension, etc)",
+          "type": "string",
+          "maxLength": 250,
+          "rows": 4,
+          "cols": 50
+        },
+        "txtPurpose": {
+          "title": "What is your main purpose for obtaining this surgical second opinion",
+          "description": "What is your main purpose for obtaining this surgical second opinion",
+          "type": "string",
+          "maxLength": 250,
+          "rows": 4,
+          "cols": 50
+        },
+        "rdlPreviousInjury": {
+          "title": "Have your had previous spinal surgery?",
+          "description": "Have your had previous spinal surgery?",
+          "type": "string",
+          "name": "rdlPreviousInjury",
+          "enum": [
+            "1",
+            "0"
+          ]
+        }
+      }
+    }
+  }
+},
+  "model": {
+  "subject": {
+    "txtFirstName": "Joe",
+    "txtLastName": "Burrow",
+    "dtBirthDate": "2002-10-01",
+    "txtCity": "New Orleans",
+    "txtState": "LA",
+    "selGender": "Male"
+  },
+  "diagnosis-treatment": {
+    "txtDiagnosis": "Hit in the head by a 325lb defensive tackle.  Concussion and spinal twisting.",
+    "rdlTreatment": "1",
+    "txtTreatmentLength": "Carted off field on stretcher.  Rest."
+  }
+}
+}

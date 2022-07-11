@@ -1,0 +1,83 @@
+@import "~@angular/material/theming";
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue.
+$solution-app-primary-palette: mat-palette($mat-blue, 700);
+$solution-app-accent-palette: mat-palette($mat-gray);
+$solution-app-warn-palette: mat-palette($mat-blue, 900);
+
+// Create the Light theme object (a Sass map containing all of the palettes).
+$solution-app-theme: mat-light-theme(
+  $solution-app-primary-palette,
+  $solution-app-accent-palette,
+  $solution-app-warn-palette
+);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($solution-app-theme);
+
+// Create a Dark theme using same colors or alternate colors, if desired
+$solution-app-dark-primary-palette: mat-palette($mat-blue);
+$solution-app-dark-accent-palette: mat-palette($mat-pink, 400);
+$solution-app-dark-warn-palette: mat-palette($mat-grey);
+
+$solution-app-dark-theme: mat-dark-theme(
+  $solution-app-dark-primary-palette,
+  $solution-app-dark-accent-palette,
+  $solution-app-dark-warn-palette
+);
+
+.solution-dark-theme {
+  @include angular-material-theme($solution-app-dark-theme);
+}
+
+// Material Design Colors swatch preview styles
+
+$mat-palettes: (
+  red: $mat-red, //#f44336,
+  pink: $mat-pink, //#e91e63,
+  purple: $mat-purple, //#9c27b0,
+  deep-purple: $mat-deep-purple, //#673ab7,
+  indigo: $mat-indigo, //#3f51b5,
+  blue: $mat-blue, // #2196f3,
+  light-blue: $mat-light-blue, //#03a9f4,
+  cyan: $mat-cyan, //#00bcd4,
+  teal: $mat-teal, //#009688,
+  green: $mat-green, //#4caf50,
+  light-green: $mat-light-green, //#8bc34a,
+  lime: $mat-lime, //#cddc39,
+  yellow: $mat-yellow, //#ffeb3b,
+  amber: $mat-amber, //#ffc107,
+  orange: $mat-orange, //#ff9800,
+  deep-orange: $mat-deep-orange, //#ff5722,
+  brown: $mat-brown, //#795548,
+  grey: $mat-grey, //#9e9e9e,
+  blue-grey: $mat-blue-grey //#607d8b
+);
+
+$hues: (
+  50,
+  100,
+  200,
+  300,
+  400,
+  500,
+  600,
+  700,
+  800,
+  900,
+  A100,
+  A200,
+  A400,
+  A700
+);
+
+

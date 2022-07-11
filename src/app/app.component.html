@@ -1,0 +1,53 @@
+<div [class.solution-dark-theme]="isDarkThemeActive">
+  <!-- Header ------------------------------------------------------------------------->
+  <div fxFlex="none">
+    <solution-header
+      title="JSON Schema using Formly"
+      [angularVersion]="ngVersion"
+      [materialVersion]="'10.2.6'"
+    >
+    </solution-header>
+  </div>
+  <div
+    class="basic-container"
+    fxLayout="column"
+    fxLayout.xs="column"
+    fxLayoutAlign="space-around stretch"
+    fxFill
+  >
+    <h2 class="mat-title">Examples</h2>
+    <div style="margin-bottom: 20px;">
+      <button
+        mat-button
+        *ngFor="let example of examples"
+        (click)="loadExample(example)"
+        [color]="type === example ? 'primary' : ''"
+      >
+        {{ example }}
+      </button>
+    </div>
+    <form [formGroup]="form" (ngSubmit)="submit()" *ngIf="fields">
+      <formly-form
+        [model]="model"
+        [fields]="fields"
+        [options]="options"
+        [form]="form"
+      ></formly-form>
+      <button
+        mat-flat-button
+        color="primary"
+        type="submit"
+        [disabled]="!form.valid"
+      >
+        Submit
+      </button>
+    </form>
+  </div>
+</div>
+<div class="basic-container">
+  <p>After selecting a date, the model should return as yyyy-M-d (no time).</p>
+  <pre>{{ model | json }}</pre>
+</div>
+<!-- Copyright 2018 Google Inc. All Rights Reserved.
+    Use of this source code is governed by an MIT-style license that
+    can be found in the LICENSE file at http://angular.io/license -->

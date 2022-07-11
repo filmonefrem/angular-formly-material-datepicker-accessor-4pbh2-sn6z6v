@@ -1,0 +1,7 @@
+<mat-toolbar color="primary" layout="fill">
+	{{ title }} (Angular {{ angularVersion }}) (Material {{ materialVersion }})
+	<span class="fill-space"></span>
+	<mat-slide-toggle color="accent" (change)="onThemeChange($event)">
+		Dark Theme
+	</mat-slide-toggle>
+</mat-toolbar>

@@ -1,0 +1,15 @@
+<mat-card>
+  <mat-card-title *ngIf="to.label">{{ to.label }}</mat-card-title>
+  <mat-card-subtitle *ngIf="to.description">{{ to.description }}
+  <div class="mat-error" role="alert" *ngIf="showError && formControl.errors">
+    <formly-validation-message [field]="field"></formly-validation-message>
+  </div>
+  </mat-card-subtitle>
+  <mat-card-content>
+  <mat-expansion-panel class="mat-elevation-z0" [expanded]="true">
+    <mat-expansion-panel-header style="position: relative; right: 0px; top: 0px;">
+    </mat-expansion-panel-header>
+    <formly-field *ngFor="let f of field.fieldGroup" [field]="f"></formly-field>
+  </mat-expansion-panel>
+  </mat-card-content>
+</mat-card> 

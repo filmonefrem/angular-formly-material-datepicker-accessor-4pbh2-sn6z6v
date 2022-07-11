@@ -1,0 +1,51 @@
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+body {
+  font-family: Roboto, Arial, sans-serif;
+  margin: 0;
+}
+.basic-container {
+  padding: 30px;
+}
+.version-info {
+  font-size: 8pt;
+  float: right;
+  margin: 8px;
+}
+.fill-space {
+  flex: 1 1 auto;
+}
+
+
+.container {
+  display: -webkit-box;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Extra classes needed for good layout */
+mat-card, mat-expansion-panel {
+  margin-bottom: 12px  !important;
+}
+
+mat-card{
+  transition: all .25s linear !important;
+}
+
+mat-card:hover {
+  box-shadow: -1px 10px 29px 0px rgba(0,0,0,0.3) !important;
+}
+
+.solution-dark-theme {
+  mat-card {
+  transition: all .25s linear !important;
+  margin-bottom: 12px  !important;
+}
+
+mat-card:hover {
+  box-shadow: -1px 10px 29px 0px rgba(0,0,0,0.5) !important;
+}
+}
+/**  Copyright 2018 Google Inc. All Rights Reserved.
+    Use of this source code is governed by an MIT-style license that
+    can be found in the LICENSE file at http://angular.io/license */

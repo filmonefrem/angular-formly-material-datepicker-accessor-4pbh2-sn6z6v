@@ -1,0 +1,27 @@
+{
+  "schema": {
+    "title": "A date form",
+    "description": "Format date value for service layer.",
+    "type": "object",
+    "required": [
+      "mydate"
+    ],
+    "properties": {
+      "mydate": {
+        "type": "string",
+        "format": "date",
+        "title": "My Date (Display as M/d/yyyy)",
+          "widget": {
+            "formlyConfig": {
+              "type": "datepicker-custom",
+              "templateOptions": {
+              }
+            }
+          }
+      }
+    }
+  },
+  "model": {
+    "mydate": "1940-03-10"
+  }
+}

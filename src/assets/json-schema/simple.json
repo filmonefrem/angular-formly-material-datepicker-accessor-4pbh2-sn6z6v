@@ -1,0 +1,60 @@
+{
+  "schema": {
+    "title": "A registration form",
+    "description": "A simple form example.",
+    "type": "object",
+    "required": [
+      "firstName",
+      "lastName"
+    ],
+    "properties": {
+      "firstName": {
+        "type": "string",
+        "title": "First name"
+      },
+      "lastName": {
+        "type": "string",
+        "title": "Last name"
+      },
+      "age": {
+        "type": "datepicker",
+        "title": "DOB"
+      },
+      "anniversary": {
+          "title": "Anniversary",
+          "type": "string",
+          "format": "date",
+          "widget": {
+            "formlyConfig": {
+              "type": "datepicker-custom",
+              "templateOptions": {
+              }
+            }
+          }
+        },
+      "bio": {
+        "type": "string",
+        "title": "Bio"
+      },
+      "password": {
+        "type": "string",
+        "title": "Password",
+        "minLength": 3,
+        "default": "noneed"
+      },
+      "telephone": {
+        "type": "string",
+        "title": "Telephone",
+        "minLength": 10
+      }
+    }
+  },
+  "model": {
+    "firstName": "Chuck",
+    "lastName": "Norris",
+    "age": "1940-03-10",
+    "anniversary": "1940-03-10",
+    "bio": "Chuck Norris's keyboard has the Any key.",
+    "telephone": "580-555-2293"
+  }
+}
